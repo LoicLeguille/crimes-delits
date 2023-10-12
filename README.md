@@ -89,7 +89,7 @@ git pull fait la même chose que la commande git fetch, mais en plus, elle vas m
 
 ### checkout
 
-git checkout bascule sur une autre branche ou restaure des fichiers de l’arbre de travail. Il vous ait demander de travailler sur une branche indépendante de main lors de ce projet afin déviter les conflits, permettre la révision de code et éviter l'abondance de commit sur la branche main. Veuillez appeller votre branche "dev-PNNN", PNNN étant votre quadrigramme (exemple: Loïc LEGUILLE -> LLEG).
+git checkout bascule sur une autre branche ou restaure des fichiers de l’arbre de travail. Il vous est demandé de travailler sur une branche indépendante de main lors de ce projet afin d'éviter les conflits, permettre la révision de code et éviter l'abondance de commit sur la branche main. Veuillez appeller votre branche "dev-PNNN", PNNN étant votre quadrigramme (exemple: Loïc LEGUILLE -> LLEG).
 
 ### commit
 
