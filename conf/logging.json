@@ -27,6 +27,10 @@
         "__main__": {
             "handlers": ["console", "file"],
             "level": "DEBUG"
+        },
+        "utils": {
+            "handlers": ["console", "file"],
+            "level": "DEBUG"
         }
     }
 }
