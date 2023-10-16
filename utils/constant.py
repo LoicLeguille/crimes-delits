@@ -22,8 +22,14 @@ class Constant:
     # Constant for instructions file path
     INSTRUCTIONS_FILE = "./data/instructions.pdf"
 
+    # Constant for documentation file path
+    DOCUMENTATION_FILE = "./data/documentation.docx"
+
     # Constant for data url
     DATA_URL = "https://cloud.crossdata.tech/s/n6WpQJ9Bpxgtg7D/download/crimes-et-delits-enregistres-par-les-services-de-gendarmerie-et-de-police-depuis-2012.xlsx"
 
     # Constant for instructions url
     INSTRUCTIONS_URL = "https://cloud.crossdata.tech/s/s7zTSRCn6oSYC4S/download/Mission%202.pdf"
+
+    # Constant for documentation url
+    DOCUMENTATION_URL = "https://www.data.gouv.fr/fr/datasets/r/7c7edac3-d598-42df-a58b-1ac2e0a0a392"
