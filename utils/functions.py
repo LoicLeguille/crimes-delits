@@ -8,7 +8,6 @@
 """
 
 import os
-import urllib.request
 import logging
 
 import requests
@@ -26,10 +25,12 @@ def download_data_files() -> None:
 
     # download xlsx file
     if not os.path.exists(Constant.DATA_FILE):
-        urllib.request.urlretrieve(Constant.DATA_URL, Constant.DATA_FILE)
-        log.info('data file downloaded')
+        response = requests.get(Constant.DATA_URL, timeout=10)
+        with open(Constant.DATA_FILE, 'wb') as file:
+            file.write(response.content)
+            log.info('data file downloaded')
     else:
-        log.debug('data file already exists')
+        log.info('data file already exists')
 
     # download pdf file
     if not os.path.exists(Constant.INSTRUCTIONS_FILE):
@@ -38,13 +39,15 @@ def download_data_files() -> None:
             file.write(response.content)
             log.info('instructions file downloaded')
     else:
-        log.debug('instructions file already exists')
+        log.info('instructions file already exists')
 
     # download docx file
     if not os.path.exists(Constant.DOCUMENTATION_FILE):
-        urllib.request.urlretrieve(Constant.DOCUMENTATION_URL, Constant.DOCUMENTATION_FILE)
-        log.info('documentation file downloaded')
+        response = requests.get(Constant.INSTRUCTIONS_URL, timeout=10)
+        with open(Constant.DOCUMENTATION_FILE, 'wb') as file:
+            file.write(response.content)
+            log.info('documentation file downloaded')
     else:
-        log.debug('documentation file already exists')
+        log.info('documentation file already exists')
 
     log.debug('End')
