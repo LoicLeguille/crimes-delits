@@ -14,40 +14,32 @@ import requests
 
 from utils.constant import Constant
 
-def download_data_files() -> None:
-    """download xlsx and pdf files provided on nextcloud."""
+log = logging.getLogger(__name__)
 
-    log = logging.getLogger(__name__)
+def download_file(url: str | bytes, filepath: str | os.PathLike):
+    """download file loacally from an url.
+
+    Args:
+        url (str | bytes): url of the file to download
+        filepath (str | os.PathLike): path to save the file
+    """
     log.debug('Start')
-    # Create data folder
+    __create_data_folder()
+
+    if not os.path.exists(filepath):
+        response = requests.get(url, timeout=10)
+        with open(filepath, 'wb') as file:
+            file.write(response.content)
+            log.info('%s file downloaded', os.path.basename(filepath))
+    else:
+        log.info('%s file already exists', os.path.basename(filepath))
+    log.debug('End')
+
+def __create_data_folder() -> None:
+    """create a data folder if it doesn't already exists."""
+
+    log.debug('Start')
     if not os.path.exists(Constant.DATA_FOLDER):
         os.makedirs(Constant.DATA_FOLDER)
-
-    # download xlsx file
-    if not os.path.exists(Constant.DATA_FILE):
-        response = requests.get(Constant.DATA_URL, timeout=10)
-        with open(Constant.DATA_FILE, 'wb') as file:
-            file.write(response.content)
-            log.info('data file downloaded')
-    else:
-        log.info('data file already exists')
-
-    # download pdf file
-    if not os.path.exists(Constant.INSTRUCTIONS_FILE):
-        response = requests.get(Constant.INSTRUCTIONS_URL, timeout=10)
-        with open(Constant.INSTRUCTIONS_FILE, 'wb') as file:
-            file.write(response.content)
-            log.info('instructions file downloaded')
-    else:
-        log.info('instructions file already exists')
-
-    # download docx file
-    if not os.path.exists(Constant.DOCUMENTATION_FILE):
-        response = requests.get(Constant.INSTRUCTIONS_URL, timeout=10)
-        with open(Constant.DOCUMENTATION_FILE, 'wb') as file:
-            file.write(response.content)
-            log.info('documentation file downloaded')
-    else:
-        log.info('documentation file already exists')
-
+        log.info("successfully created data folder")
     log.debug('End')
