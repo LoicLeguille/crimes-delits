@@ -8,7 +8,7 @@
 """
 
 class Constant:
-    """constant class"""
+    """constant class."""
 
     # Constant for data folder path
     DATA_FOLDER = "./data"
