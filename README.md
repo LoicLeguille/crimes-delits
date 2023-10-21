@@ -27,9 +27,16 @@ git config --global user.name "Your Name Comes Here"
 git config --global user.email you@yourdomain.example.com
 ```
 
-Une fois git téléchargé, sous Visual Studio Code il est possible de cloner le répertoire via le bouton de Source Control.  
+Sous Visual Studio Code il est possible de cloner le répertoire via le bouton de Source Control.  
 
 ![cloner un répertoir](assets/clone.png)
+
+Ce projet utilise Jupyter notebook, pour garder les commits pertinants et ne pas les encombrer d'informations veuillez exécutez ces commandes au niveau de votre répertoire local.
+
+```commande
+git config --local filter.gitignore.smudge cat
+git config --local filter.gitignore.clean "sed 's/.*execution_count.*/   \"execution_count\": 1,/'"
+```
 
 ### vsc extensions
 
