@@ -35,7 +35,7 @@ Ce projet utilise Jupyter notebook, pour garder les commits pertinants et ne pas
 
 ```commande
 git config --local filter.gitignore.smudge cat
-git config --local filter.gitignore.clean "sed '.*("execution_count":).*'"
+git config --local filter.gitignore.clean "sed 's/.*execution_count.*/   \"execution_count\": 1,/'"
 ```
 
 ### vsc extensions
