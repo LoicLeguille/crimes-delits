@@ -24,7 +24,7 @@ def download_file(url: str | bytes, filepath: str | os.PathLike):
         filepath (str | os.PathLike): path to save the file
     """
     log.debug('Start')
-    __create_data_folder()
+    _create_data_folder()
 
     if not os.path.exists(filepath):
         response = requests.get(url, timeout=10)
@@ -35,7 +35,7 @@ def download_file(url: str | bytes, filepath: str | os.PathLike):
         log.info('%s file already exists', os.path.basename(filepath))
     log.debug('End')
 
-def __create_data_folder() -> None:
+def _create_data_folder() -> None:
     """create a data folder if it doesn't already exists."""
 
     log.debug('Start')
