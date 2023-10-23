@@ -16,7 +16,7 @@ from utils.constant import Constant
 
 log = logging.getLogger(__name__)
 
-def download_file(url: str | bytes, filepath: str | os.PathLike):
+def download_file(url: str | bytes, filepath: str | os.PathLike) -> None:
     """download file locally from an url.
 
     Args:
