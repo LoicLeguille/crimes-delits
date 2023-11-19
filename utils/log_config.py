@@ -1,11 +1,9 @@
-"""
 # Project: CrimesDelits
 # Creation Date: 2023-10-11
 # History:
 ######################################################################################################################################################
 #   DATE            AUTHOR      VERSION     ACTION
 #   2023-10-11      LLEG        1.0.0       Creation
-"""
 
 import os
 import json
