@@ -50,6 +50,9 @@ def read_xlsx(xlsx_path: str | os.PathLike) -> dict[str, pd.DataFrame]:
     # load every sheets except 1st one and store it into a dictonnary
     dict_df = pd.read_excel(Constant.DATA_FILE, header=[0, 1, 2], index_col=0, sheet_name=sheets)
 
+    # rename sheet title
+    dict_df['Services PN 2015'] = dict_df.pop('Services PN 20150')
+
     for value in dict_df.values():
         # drop first and second columns (doesn't have data)
         value.drop(value.columns[0:1], axis=1, inplace=True)
