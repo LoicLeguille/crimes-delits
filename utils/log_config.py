@@ -15,11 +15,11 @@ class Logging:
     """logging class."""
 
     @staticmethod
-    def load_logging_config(filename: str | os.PathLike | None = "./conf/logging.json") -> None:
+    def load_logging_config(filename: int | str | bytes | os.PathLike[str] | os.PathLike[bytes]) -> None:
         """load a logging config using dictConfig method.
 
         Args:
-            filename (str | os.PathLike | None, optional): json logging file to load. Defaults to "./conf/logging.json".
+            filename (int | str | bytes | os.PathLike[str] | os.PathLike[bytes]): json logging file to load.
         """
 
         with open(filename, 'r', encoding="utf-8") as file:
