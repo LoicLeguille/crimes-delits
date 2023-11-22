@@ -34,14 +34,14 @@ def download_file(url: str | bytes, filepath: str | os.PathLike) -> None:
         log.info('%s file already exists', os.path.basename(filepath))
     log.debug('End')
 
-def read_xlsx(xlsx_path: str | os.PathLike) -> dict[str, pd.DataFrame]:
+def read_xlsx(xlsx_path: str | os.PathLike) -> dict[int | str, pd.DataFrame]:
     """read excel file and returns dictionary of dataframes corresponding to each excel sheets.
 
     Args:
         xlsx_path (str | os.PathLike): path of the xlsx file to read 
 
     Returns:
-        dict[str, pd.DataFrame]: dictionary of dataframes
+        dict[int | str, pd.DataFrame]: dictionary of dataframes
     """
     # get every sheet name except for the 1st one
     reader = pd.ExcelFile(xlsx_path)
@@ -54,7 +54,7 @@ def read_xlsx(xlsx_path: str | os.PathLike) -> dict[str, pd.DataFrame]:
         # drop first and second columns (doesn't have data)
         value.drop(value.columns[0:1], axis=1, inplace=True)
         # rename levels of MultiIndex columns
-        value.columns.rename(['Départements', 'Périmètres', 'CSP'], level=[0, 1, 2], inplace=True)
+        value.columns.rename(['Départements', 'Périmètres', 'CSP'], inplace=True)
 
     return dict_df
 
