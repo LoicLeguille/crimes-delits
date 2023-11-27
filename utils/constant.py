@@ -31,3 +31,6 @@ class Constant:
 
     # Constant for documentation url
     DOCUMENTATION_URL = "https://www.data.gouv.fr/fr/datasets/r/7c7edac3-d598-42df-a58b-1ac2e0a0a392"
+
+    # Constant for choosen index
+    CHOSEN_INDEX = 57
