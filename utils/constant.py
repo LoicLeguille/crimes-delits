@@ -23,6 +23,9 @@ class Constant:
     # Constant for documentation file path
     DOCUMENTATION_FILE = "./data/documentation.docx"
 
+    # Constant for geojson file
+    GEOJSON_FILE = 'data\contour-des-departements.geojson'
+
     # Constant for data url
     DATA_URL = "https://cloud.crossdata.tech/s/n6WpQJ9Bpxgtg7D/download/crimes-et-delits-enregistres-par-les-services-de-gendarmerie-et-de-police-depuis-2012.xlsx"
 
@@ -32,5 +35,14 @@ class Constant:
     # Constant for documentation url
     DOCUMENTATION_URL = "https://www.data.gouv.fr/fr/datasets/r/7c7edac3-d598-42df-a58b-1ac2e0a0a392"
 
+    # Constant for geojson url
+    GEOJSON_URL = "https://www.data.gouv.fr/fr/datasets/r/90b9341a-e1f7-4d75-a73c-bbc010c7feeb"
+
     # Constant for choosen index
-    CHOSEN_INDEX = 57
+    CHOSEN_INDEX = [29, 30]
+
+    # Constant for the year to split between train and test data
+    TRAIN_TEST_SPLIT_YEAR = '2020'
+
+    # Constant service
+    SERVICE = 'PN'
