@@ -39,11 +39,14 @@ class Constant:
     GEOJSON_URL = "https://www.data.gouv.fr/fr/datasets/r/90b9341a-e1f7-4d75-a73c-bbc010c7feeb"
 
     # Constant for choosen index
-    CHOSEN_INDEX = [29, 30]
-    #[8,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29, 30,39,40]
+    CHOSEN_INDEX = [34,35,36]
+    #[29, 30]
+    # [8,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29, 30,39,40]
+    # [29, 30]
+
 
     # Constant for the year to split between train and test data
-    TRAIN_TEST_SPLIT_YEAR = '2020'
+    TRAIN_TEST_SPLIT_YEAR = '2021'
 
     # Constant service
-    SERVICE = 'PN'
+    SERVICE = 'GN'
